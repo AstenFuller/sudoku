@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "npm run build && node server/index.js",
-    "build": "webpack --mode development",
+    "build": "npm run less && webpack --mode development",
+    "less": "lessc src/css/styles.less dist/css/styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/AstenFuller/sudoku#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "fake-sudoku-puzzle-generator": "^1.2.1",
     "morgan": "^1.9.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
@@ -32,6 +34,8 @@
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
+    "less": "^3.11.1",
+    "less-plugin-autoprefix": "^2.0.0",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
