@@ -25,11 +25,11 @@ class App extends Component {
     }
 
     getNumber(e) {
-        this.setState({numberToEnter: e})
+        this.setState({numberToEnter: e});
     }
 
     enterNumber(e) {
-        let updatedPuzzle = [...this.state.testPuzzle]
+        let updatedPuzzle = [...this.state.testPuzzle];
 
         if(this.state.numberToEnter == null) {
             return;
@@ -45,29 +45,20 @@ class App extends Component {
         switch(e) {
             case('getVeryEasySudoku'):
                 puzzle = getVeryEasySudoku();
-                testPuzzle = puzzle.map(function(arr) {
-                    return arr.slice();
-                });
                 break;
             case('getEasySudoku'):
                 puzzle = getEasySudoku();
-                testPuzzle = puzzle.map(function(arr) {
-                    return arr.slice();
-                });
                 break;
             case('getMediumSudoku'):
                 puzzle = getMediumSudoku();
-                testPuzzle = puzzle.map(function(arr) {
-                    return arr.slice();
-                });
                 break;
             case('getHardSudoku'):
                 puzzle = getHardSudoku();
-                testPuzzle = puzzle.map(function(arr) {
-                    return arr.slice();
-                });
                 break;
         }
+        testPuzzle = puzzle.map(function(arr) {
+            return arr.slice();
+        });
 
         this.setState({puzzle: puzzle,
                        testPuzzle: testPuzzle});
