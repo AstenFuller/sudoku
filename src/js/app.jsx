@@ -60,7 +60,7 @@ class App extends Component {
                     }      
                 }
             }
-            if(this.state.correct == null) {
+            if(this.state.correct != 'Incomplete' && this.state.correct != false) {
                 this.setState({ correct: true });
             }
         }
